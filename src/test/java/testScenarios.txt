@@ -1,0 +1,13 @@
+✅ Positive Test Scenarios (Valid cases)
+#	Test Scenario	Description
+1	Valid Login	Enter correct username and password → User should land on the dashboard.
+2	Login with 'Tab' Navigation	Enter username → Press Tab key → Enter password → Click Login → Successful login.
+3	Logout and Re-login	Login → Logout → Login again → Dashboard should be accessible again.
+4.  Login, Perform the Activity and then Logout.
+❌ Negative Test Scenarios (Invalid cases)
+#	Test Scenario	Description
+1	Invalid Username	Enter incorrect username with correct password → Should show "Invalid credentials" message.
+2	Invalid Password	Enter correct username with incorrect password → Should show "Invalid credentials" message.
+3	Blank Username	Leave username blank → Enter valid password → Should show validation error.
+4	Blank Password	Enter valid username → Leave password blank → Should show validation error.
+5	Both Fields Blank	Leave both username and password blank → Should not proceed → Should show validation error.
