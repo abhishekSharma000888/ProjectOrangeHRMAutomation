@@ -1,44 +1,40 @@
 package tests.base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.LoginPage;
 
 import java.time.Duration;
 
 public class BaseTest {
 
-  public void implicitWaitApplied(){
+  protected WebDriver driver;
 
+  public void implicitWaitApplied() {
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
   }
 
-    protected WebDriver driver;
-
   @BeforeMethod
-    public void setup(){
+  public void setup() {
+    WebDriverManager.firefoxdriver().setup();
+    driver = new FirefoxDriver();
 
-      driver = new FirefoxDriver();
-      driver.manage().window().maximize();
-
+    driver.manage().window().maximize();
     implicitWaitApplied();
 
-      driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
   }
 
-    @AfterMethod
-    public void tearDown() {
-        // Close the browser
-      try {
-        // your test steps
-      } finally {
-        if (driver != null) {
-          driver.quit();
-        }
+  @AfterMethod
+  public void tearDown() {
+    try {
+      // Keep your test steps here if needed
+    } finally {
+      if (driver != null) {
+        driver.quit();
       }
     }
-    }
-
-
+  }
+}
