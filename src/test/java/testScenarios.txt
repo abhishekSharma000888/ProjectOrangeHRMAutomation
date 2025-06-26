@@ -11,4 +11,3 @@
 2	Invalid Password	Enter correct username with incorrect password → Should show "Invalid credentials" message.
 3	Blank Username	Leave username blank → Enter valid password → Should show validation error.
 4	Blank Password	Enter valid username → Leave password blank → Should show validation error.
-5	Both Fields Blank	Leave both username and password blank → Should not proceed → Should show validation error.
