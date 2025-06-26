@@ -4,12 +4,9 @@ import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import tests.base.BaseTest;
-
-import javax.print.DocFlavor;
 
 public class LoginTest extends BaseTest {
 

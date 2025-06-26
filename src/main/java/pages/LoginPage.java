@@ -67,4 +67,68 @@ public class LoginPage {
 
     }
 
+    public void invalidUsernameLoginSetup(){
+
+        WebElement username = driver.findElement(By.xpath("//*[@name=\"username\"]"));
+        username.sendKeys("Admin0123");
+
+        username.sendKeys(Keys.TAB);
+        WebElement password = driver.switchTo().activeElement();
+        password.sendKeys("admin123");
+
+        applyImplicitWait();
+
+        WebElement loginButton = driver.findElement(By.xpath("//*[@type=\"submit\"]"));
+        loginButton.click();
+
+    }
+
+    public void invalidPasswordLoginSetup(){
+
+        WebElement username = driver.findElement(By.xpath("//*[@name=\"username\"]"));
+        username.sendKeys("Admin");
+
+        username.sendKeys(Keys.TAB);
+        WebElement password = driver.switchTo().activeElement();
+        password.sendKeys("admin123456");
+
+        applyImplicitWait();
+
+        WebElement loginButton = driver.findElement(By.xpath("//*[@type=\"submit\"]"));
+        loginButton.click();
+
+    }
+
+    public void blankUsernameLoginSetup(){
+
+        WebElement username = driver.findElement(By.xpath("//*[@name=\"username\"]"));
+        username.sendKeys(" ");
+
+        username.sendKeys(Keys.TAB);
+        WebElement password = driver.switchTo().activeElement();
+        password.sendKeys("admin123");
+
+        applyImplicitWait();
+
+        WebElement loginButton = driver.findElement(By.xpath("//*[@type=\"submit\"]"));
+        loginButton.click();
+
+    }
+
+    public void blankPasswordLoginSetup(){
+
+        WebElement username = driver.findElement(By.xpath("//*[@name=\"username\"]"));
+        username.sendKeys("Admin");
+
+        username.sendKeys(Keys.TAB);
+        WebElement password = driver.switchTo().activeElement();
+        password.sendKeys(" ");
+
+        applyImplicitWait();
+
+        WebElement loginButton = driver.findElement(By.xpath("//*[@type=\"submit\"]"));
+        loginButton.click();
+
+    }
+
 }
